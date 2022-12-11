@@ -1,0 +1,10 @@
+<h1>Editing message</h1>
+
+<%= render "form", message: @message %>
+
+<br>
+
+<div>
+  <%= link_to "Show", @message, class: "btn btn-info"%>
+  <%= link_to "Back", messages_path, class: "btn btn-secondary" %>
+</div>

@@ -1,0 +1,20 @@
+<!--<% if notice %>
+  <div class="alert alert-danger alert-dismissible fade show mt-1 p-1">
+  <p style="color: red"><%= notice %></p>
+  <button type="button" class="btn-close p-1" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<% end %>-->
+
+<h1 class="text-white fs-1">Messages:</h1>
+
+  <div class="row">
+    <% @messages.each do |message| %>
+      <div class="bg-dark rounded-3 d-flex flex-column justify-content-between" style="flex: 0 0 auto;width: 32.3%;margin: 2px;font-family: 'Lato', sans-serif;">
+        <h2 class="text-white"><%= message.title %></h2>
+        <p><%= link_to "Show", message, class: 'btn btn-info btn-sm align-self-end' %></p>
+      </div>
+    <% end %>
+  </div>
+
+
+<%= link_to "New message", new_message_path, class: 'btn btn-primary mt-2' %>

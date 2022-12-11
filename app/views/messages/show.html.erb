@@ -1,0 +1,25 @@
+<% if notice %>
+  <div class="alert alert-success mt-1 p-0">
+  <p style="color: green"><%= notice %></p>
+</div>
+<% end %>
+
+<%= render @message %>
+
+<h4>Comments:</h4>
+<%= render @message.comments %>
+
+<h5 >Replay to mesage:</h5>
+<%= render 'comments/form' %>
+
+<div>
+  <%= link_to "Back", messages_path, class: "btn btn-secondary" %>
+
+  <% if user_signed_in? %>
+    <% if @message.user_id == current_user.id %>
+      <%= link_to "Edit", edit_message_path(@message), class: "btn btn-primary" %>
+      <%= link_to "Delete", @message,class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  <% end %>
+
+</div>
