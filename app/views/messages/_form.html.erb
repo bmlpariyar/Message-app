@@ -11,17 +11,17 @@
       </div>
     <% end %>
 
-    <div>
-      <%= form.label :title , class: "form-label", style: "display: block" %>
-      <%= form.text_field :title, class: "form-control" %>
-    </div>
-
-    <div>
-      <%= form.label :discription, class: "form-label", style: "display: block" %>
-      <%= form.text_area :discription, class: "form-control", style: "height: 120px" %>
-    </div>
-
-    <div>
-      <%= form.button :submit , class: "btn btn-primary my-1" %>
-    </div>
+      <div class="card-body">
+          <div>
+            <%= form.label "Title:" , class: "form-label text-white fs-4", style: "display: block" %>
+            <%= form.text_field :title, class: "form-control bg-transparent text-white" %>
+          </div>
+          <div>
+            <%= form.label "Discription:", class: "form-label text-white fs-4", style: "display: block" %>
+            <%= form.text_area :discription, class: "form-control bg-transparent text-white", style: "height: 120px" %>
+          </div>
+          <div>
+            <%= form.button :submit , class: "btn btn-primary my-1" %>
+          </div>
+      </div>
 <% end %>

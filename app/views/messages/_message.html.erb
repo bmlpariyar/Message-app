@@ -1,5 +1,21 @@
 <div id="<%= dom_id message %>">
-  <h2><%= message.title %></h2>
-  <p>Posted by: <i class="fs-5"><%= @message.user.email%></i> <%= time_ago_in_words(@message.created_at)%> ago</p>
-  <p><%= message.discription %></p>
+
+  <div class="card bg-transparent text-white my-1 border border-2 ">
+    <div class="card-header border-bottom border-3 border-white">
+      <h2 class='fw-bold'><%= message.title %></h2>
+      <footer class="blockquote-footer text-white mt-1" style="font-size: 14px;">Posted by: <cite title="Source Title"><%= @message.user.email%><%= time_ago_in_words(@message.created_at)%></cite> ago</footer>
+    </div>
+    <div class="card-body">
+      <p><%= message.discription %></p>
+    </div>
+    <hr class='border boder-2 opacity-10'>
+    <div class=" bg-transparent text-white">
+        <div class="card-header">
+          <h5>Comments:</h5>
+        </div>
+        <div class="card-body">
+          <%= render @message.comments %>
+        </div>
+    </div>
+  </div>
 </div>
